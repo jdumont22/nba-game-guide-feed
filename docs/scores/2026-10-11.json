@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-10-11",
-  "updated": "2026-10-11T23:19:58.036737+00:00",
+  "updated": "2026-10-11T23:24:29.310007+00:00",
   "games": [
     {
       "away": "Dallas Mavericks",
@@ -20,8 +20,8 @@
     {
       "away": "Milwaukee Bucks",
       "home": "Charlotte Hornets",
-      "awayScore": "16",
-      "homeScore": "14",
+      "awayScore": "21",
+      "homeScore": "21",
       "state": "in",
       "detail": "1st Qtr",
       "period": 1,
@@ -33,8 +33,8 @@
     {
       "away": "Orlando Magic",
       "home": "Cleveland Cavaliers",
-      "awayScore": "28",
-      "homeScore": "34",
+      "awayScore": "32",
+      "homeScore": "40",
       "state": "in",
       "detail": "2nd Qtr",
       "period": 2,
