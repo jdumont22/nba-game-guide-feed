@@ -1,0 +1,60 @@
+{
+  "available": true,
+  "provider": "BALLDONTLIE via GitHub",
+  "date": "2026-10-11",
+  "updated": "2026-10-11T23:19:58.036737+00:00",
+  "games": [
+    {
+      "away": "Dallas Mavericks",
+      "home": "Houston Rockets",
+      "awayScore": "132",
+      "homeScore": "115",
+      "state": "post",
+      "detail": "Final",
+      "period": 4,
+      "completed": true,
+      "start": "2026-10-11T10:00:00.000Z",
+      "gameId": "21717909",
+      "cupStage": null
+    },
+    {
+      "away": "Milwaukee Bucks",
+      "home": "Charlotte Hornets",
+      "awayScore": "16",
+      "homeScore": "14",
+      "state": "in",
+      "detail": "1st Qtr",
+      "period": 1,
+      "completed": false,
+      "start": "2026-10-11T23:00:00.000Z",
+      "gameId": "21826165",
+      "cupStage": null
+    },
+    {
+      "away": "Orlando Magic",
+      "home": "Cleveland Cavaliers",
+      "awayScore": "28",
+      "homeScore": "34",
+      "state": "in",
+      "detail": "2nd Qtr",
+      "period": 2,
+      "completed": false,
+      "start": "2026-10-11T22:30:00.000Z",
+      "gameId": "21826166",
+      "cupStage": null
+    },
+    {
+      "away": "Chicago Bulls",
+      "home": "Denver Nuggets",
+      "awayScore": "",
+      "homeScore": "",
+      "state": "pre",
+      "detail": "2026-10-12T01:00:00Z",
+      "period": 0,
+      "completed": false,
+      "start": "2026-10-12T01:00:00.000Z",
+      "gameId": "21826167",
+      "cupStage": null
+    }
+  ]
+}

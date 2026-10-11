@@ -1,0 +1,99 @@
+{
+  "available": true,
+  "provider": "BALLDONTLIE via GitHub",
+  "date": "2026-10-10",
+  "updated": "2026-10-11T23:19:58.036737+00:00",
+  "games": [
+    {
+      "away": "Minnesota Timberwolves",
+      "home": "Miami Heat",
+      "awayScore": "125",
+      "homeScore": "124",
+      "state": "post",
+      "detail": "Final",
+      "period": 4,
+      "completed": true,
+      "start": "2026-10-11T00:00:00.000Z",
+      "gameId": "21717904",
+      "cupStage": null
+    },
+    {
+      "away": "Atlanta Hawks",
+      "home": "Indiana Pacers",
+      "awayScore": "119",
+      "homeScore": "117",
+      "state": "post",
+      "detail": "Final",
+      "period": 4,
+      "completed": true,
+      "start": "2026-10-10T23:00:00.000Z",
+      "gameId": "21717905",
+      "cupStage": null
+    },
+    {
+      "away": "Philadelphia 76ers",
+      "home": "Boston Celtics",
+      "awayScore": "106",
+      "homeScore": "144",
+      "state": "post",
+      "detail": "Final",
+      "period": 4,
+      "completed": true,
+      "start": "2026-10-11T00:00:00.000Z",
+      "gameId": "21717906",
+      "cupStage": null
+    },
+    {
+      "away": "Sacramento Kings",
+      "home": "Golden State Warriors",
+      "awayScore": "106",
+      "homeScore": "111",
+      "state": "post",
+      "detail": "Final",
+      "period": 4,
+      "completed": true,
+      "start": "2026-10-11T00:30:00.000Z",
+      "gameId": "21717907",
+      "cupStage": null
+    },
+    {
+      "away": "LA Clippers",
+      "home": "Toronto Raptors",
+      "awayScore": "106",
+      "homeScore": "114",
+      "state": "post",
+      "detail": "Final",
+      "period": 4,
+      "completed": true,
+      "start": "2026-10-10T22:30:00.000Z",
+      "gameId": "21717908",
+      "cupStage": null
+    },
+    {
+      "away": "Detroit Pistons",
+      "home": "Washington Wizards",
+      "awayScore": "108",
+      "homeScore": "114",
+      "state": "post",
+      "detail": "Final",
+      "period": 5,
+      "completed": true,
+      "start": "2026-10-10T23:00:00.000Z",
+      "gameId": "21826162",
+      "cupStage": null
+    },
+    {
+      "away": "San Antonio Spurs",
+      "home": "Phoenix Suns",
+      "awayScore": "98",
+      "homeScore": "102",
+      "state": "post",
+      "detail": "Final",
+      "period": 4,
+      "completed": true,
+      "start": "2026-10-11T02:30:00.000Z",
+      "gameId": "21826163",
+      "cupStage": null
+    }
+  ]
+}

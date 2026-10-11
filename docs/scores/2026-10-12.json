@@ -1,0 +1,73 @@
+{
+  "available": true,
+  "provider": "BALLDONTLIE via GitHub",
+  "date": "2026-10-12",
+  "updated": "2026-10-11T23:19:58.036737+00:00",
+  "games": [
+    {
+      "away": "Oklahoma City Thunder",
+      "home": "Atlanta Hawks",
+      "awayScore": "",
+      "homeScore": "",
+      "state": "pre",
+      "detail": "2026-10-12T23:00:00Z",
+      "period": 0,
+      "completed": false,
+      "start": "2026-10-12T23:00:00.000Z",
+      "gameId": "21717910",
+      "cupStage": null
+    },
+    {
+      "away": "London Lions",
+      "home": "Portland Trail Blazers",
+      "awayScore": "",
+      "homeScore": "",
+      "state": "pre",
+      "detail": "2026-10-12T20:00:00Z",
+      "period": 0,
+      "completed": false,
+      "start": "2026-10-12T20:00:00.000Z",
+      "gameId": "21826169",
+      "cupStage": null
+    },
+    {
+      "away": "Minnesota Timberwolves",
+      "home": "New York Knicks",
+      "awayScore": "",
+      "homeScore": "",
+      "state": "pre",
+      "detail": "2026-10-12T23:30:00Z",
+      "period": 0,
+      "completed": false,
+      "start": "2026-10-12T23:30:00.000Z",
+      "gameId": "21826170",
+      "cupStage": null
+    },
+    {
+      "away": "San Antonio Spurs",
+      "home": "Utah Jazz",
+      "awayScore": "",
+      "homeScore": "",
+      "state": "pre",
+      "detail": "2026-10-13T01:00:00Z",
+      "period": 0,
+      "completed": false,
+      "start": "2026-10-13T01:00:00.000Z",
+      "gameId": "21826171",
+      "cupStage": null
+    },
+    {
+      "away": "Brooklyn Nets",
+      "home": "Washington Wizards",
+      "awayScore": "",
+      "homeScore": "",
+      "state": "pre",
+      "detail": "2026-10-12T23:00:00Z",
+      "period": 0,
+      "completed": false,
+      "start": "2026-10-12T23:00:00.000Z",
+      "gameId": "21826172",
+      "cupStage": null
+    }
+  ]
+}
