@@ -193,7 +193,7 @@
 .actions{display:flex;flex-wrap:nowrap;align-items:stretch}
 .actions #magicNext{flex:1.1;min-width:0}.actions #spoilers{flex:1;min-width:0}
 .actions #refresh{flex:0 0 39px;font-size:21px;padding:5px 7px;line-height:1}
-.score-side .live-points{margin-bottom:7px!important}
+.score-side .live-points{margin-top:7px!important;margin-bottom:0!important}
 .score-side .game-alert{margin-top:2px}
 .footer{display:none!important}
 .preview-panel:not(.preview-active){margin-top:12px}
@@ -310,6 +310,8 @@ function applyScore(card,g){var s=scoreFor(g),info=s?classify(s):null;
     alert.textContent=alertText;alert.hidden=!alertText;
     var detail=(info.type==='final'||info.type==='closefinal')?'FINAL':String(info.label||'').replace(/^(?:CLOSE|BLOWOUT|LIVE)(?:\s*[·—-]\s*|\s+|$)/i,'').trim();
     detail=detail.replace(/^(?:CLOSE|BLOWOUT)\s+/i,'');
+    // Some feed labels repeat the quarter (e.g. Q2 Q2 6:53).
+    detail=detail.replace(/^(Q\d+|OT\d*)\s+\1(?=\s|$)/i,'$1');
     // Show the BALLDONTLIE game clock when available, without guessing between updates.
     if(s&&String(s.state||'').toLowerCase()==='in'&&String(s.clock||'').trim()){
       var quarter=Number(s.period||0);
@@ -341,7 +343,7 @@ games.forEach(function(g){var card=el('article','game'),bg=g.background||'#e7ecf
  var head=el('div','gamehead');head.appendChild(el('span','time',(filter==='must'?dayText(g.date)+' · ':'')+(g.time||'')));var kind=String(g.gameType||g.seasonType||g.type||'').toLowerCase();var label=/pre.?season|exhibition/.test(kind)?'PRE-SEASON':/nba.?cup|in.?season.?tournament/.test(kind)?'NBA CUP':'';head.appendChild(el('span','game-type-label',label));head.appendChild(el('div','service-slot'));card.appendChild(head);
  var body=el('div','match-grid');body.appendChild(makeTeam(g.away));
  var faces=el('div','portrait-stack');faces.appendChild(portrait(g.away));faces.appendChild(portrait(g.home));body.appendChild(faces);
- body.appendChild(makeTeam(g.home));var side=el('div','score-side');side.appendChild(el('div','live-points'));side.appendChild(el('div','game-alert'));side.appendChild(el('div','mini-status'));body.appendChild(side);card.appendChild(body);
+ body.appendChild(makeTeam(g.home));var side=el('div','score-side');side.appendChild(el('div','mini-status'));side.appendChild(el('div','live-points'));side.appendChild(el('div','game-alert'));body.appendChild(side);card.appendChild(body);
  root.appendChild(card);cards.set(gameId(g),{card:card,game:g});applyScore(card,g)
  });updateNotice()}
 function setDay(key){selected=key;render();requestScores(key,false)}
