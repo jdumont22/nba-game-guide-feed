@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -309,6 +310,13 @@ function applyScore(card,g){var s=scoreFor(g),info=s?classify(s):null;
     alert.textContent=alertText;alert.hidden=!alertText;
     var detail=(info.type==='final'||info.type==='closefinal')?'FINAL':String(info.label||'').replace(/^(?:CLOSE|BLOWOUT|LIVE)(?:\s*[·—-]\s*|\s+|$)/i,'').trim();
     detail=detail.replace(/^(?:CLOSE|BLOWOUT)\s+/i,'');
+    // Show the BALLDONTLIE game clock when available, without guessing between updates.
+    if(s&&String(s.state||'').toLowerCase()==='in'&&String(s.clock||'').trim()){
+      var quarter=Number(s.period||0);
+      var quarterLabel=quarter>4?'OT'+(quarter>5?quarter-4:''):quarter>0?'Q'+quarter:'';
+      var clock=String(s.clock).trim();
+      if(quarterLabel){detail=quarterLabel+' '+clock;}
+    }
     var match=detail.match(/^(Q\d+|OT\d*|FINAL(?:\/OT)?)(?:\s+(.+))?$/i);
     if(match){status.appendChild(el('span','status-line',match[1].toUpperCase()));if(match[2])status.appendChild(el('span','status-line',match[2]));}
     else status.textContent=detail;
