@@ -2,6 +2,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -317,7 +318,10 @@ function applyScore(card,g){var s=scoreFor(g),info=s?classify(s):null;
       var quarter=Number(s.period||0);
       var quarterLabel=quarter>4?'OT'+(quarter>5?quarter-4:''):quarter>0?'Q'+quarter:'';
       var clock=String(s.clock).trim();
-      if(quarterLabel){detail=quarterLabel+' '+clock;}
+      // Some BALLDONTLIE time values already include the quarter (e.g. 'Q2 1:31').
+      // Remove that prefix so the quarter is displayed only once.
+      clock=clock.replace(/^(?:Q\d+|OT\d*)\s+/i,'').trim();
+      if(quarterLabel){detail=quarterLabel+(clock?' '+clock:'');}
     }
     var match=detail.match(/^(Q\d+|OT\d*|FINAL(?:\/OT)?)(?:\s+(.+))?$/i);
     if(match){status.appendChild(el('span','status-line',match[1].toUpperCase()));if(match[2])status.appendChild(el('span','status-line',match[2]));}
