@@ -20,6 +20,8 @@ jobs:
         with:
           python-version: '3.11'
       - name: Download and archive NBA scores
+        env:
+          BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
         run: python update_scores.py
       - name: Commit updated score archive
         run: |
