@@ -418,7 +418,7 @@ function load(){
 
 function requestScores(key,force){
   if(preview||!loaded||filter==='must')return;
-  if(!force&&scoreCache[key]&&Date.now()-(scoreRequests[key]||0)<60000)return;
+  if(!force&&scoreCache[key]&&Date.now()-(scoreRequests[key]||0)<15000)return;
   scoreRequests[key]=Date.now();var token=++requestToken;
   fetch('scores/'+encodeURIComponent(key)+'.json?ts='+Date.now(),{cache:'no-store'})
   .then(function(r){if(!r.ok)throw new Error(r.status===404?'Scores not archived for this date':'HTTP '+r.status);return r.json()})
@@ -435,7 +435,7 @@ function resume(){if(document.hidden||preview)return;if(Date.now()-lastSync>3000
 document.addEventListener('visibilitychange',resume);window.addEventListener('focus',resume);
 /* Home Screen freshness: compare deployed HTML build marker without relying on iOS cache. */
 (function(){var build=document.querySelector('meta[name="nba-guide-build"]');if(!build)return;var last=0,checking=false;function checkFresh(){if(document.hidden||checking||Date.now()-last<60000)return;last=Date.now();checking=true;fetch(location.pathname+'?build_check='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(html){var match=html.match(/<meta name="nba-guide-build" content="([^"]+)"/);if(match&&match[1]!==build.content){var url=new URL(location.href);url.searchParams.set('v',match[1]);location.replace(url.href)}}).catch(function(){}).finally(function(){checking=false})}document.addEventListener('visibilitychange',checkFresh);window.addEventListener('focus',checkFresh);setTimeout(checkFresh,1200)})();
-setInterval(function(){if(document.hidden||preview)return;if(Date.now()-lastSync>300000)load();else requestScores(selected,true);updateStatuses()},60000);
+setInterval(function(){if(document.hidden||preview)return;requestScores(selected,true);updateStatuses();if(Date.now()-lastSync>300000)load()},15000);
 
 /* V4.16: Independent calendar dialog; no iOS native date-picker dependency. */
 (function(){
