@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-10-11",
-  "updated": "2026-10-12T01:28:44.708821+00:00",
+  "updated": "2026-10-12T01:52:10.057694+00:00",
   "games": [
     {
       "away": "Dallas Mavericks",
@@ -49,12 +49,12 @@
     {
       "away": "Chicago Bulls",
       "home": "Denver Nuggets",
-      "awayScore": "15",
-      "homeScore": "17",
+      "awayScore": "37",
+      "homeScore": "31",
       "state": "in",
-      "detail": "1st Qtr",
-      "period": 1,
-      "clock": "Q1 5:57",
+      "detail": "2nd Qtr",
+      "period": 2,
+      "clock": "Q2 9:51",
       "completed": false,
       "start": "2026-10-12T01:00:00.000Z",
       "gameId": "21826167",
