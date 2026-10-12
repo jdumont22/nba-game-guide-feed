@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-10-12",
-  "updated": "2026-10-12T21:46:47.600117+00:00",
+  "updated": "2026-10-12T22:01:19.313763+00:00",
   "games": [
     {
       "away": "Oklahoma City Thunder",
@@ -21,12 +21,12 @@
     {
       "away": "London Lions",
       "home": "Portland Trail Blazers",
-      "awayScore": "49",
-      "homeScore": "100",
+      "awayScore": "56",
+      "homeScore": "109",
       "state": "in",
-      "detail": "3rd Qtr",
-      "period": 3,
-      "clock": "END Q3",
+      "detail": "4th Qtr",
+      "period": 4,
+      "clock": "Q4 7:06",
       "completed": false,
       "start": "2026-10-12T20:00:00.000Z",
       "gameId": "21826169",
