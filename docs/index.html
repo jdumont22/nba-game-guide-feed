@@ -3,6 +3,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -205,6 +206,27 @@
 .gamehead .game-type-label{position:absolute;left:50%;top:7px;transform:translateX(-50%);font-size:10px;font-weight:900;letter-spacing:.4px;white-space:nowrap;line-height:1.3;padding:3px 6px;border-radius:5px;background:rgba(15,25,42,.16);color:inherit;pointer-events:none}
 .gamehead .game-type-label:empty{display:none}
 @media(max-width:380px){.gamehead .game-type-label{font-size:9px;padding:3px 4px}}
+
+/* V4.18: National TV toggle, scores beneath logos, and unobtrusive game type */
+.national-row{display:flex;justify-content:flex-start;margin:-3px 0 11px}
+.national-row .chip{font-size:12px}
+.match-grid .team{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;overflow:visible}
+.match-grid .team .logo{height:96px;max-height:96px}
+.team-points{font-size:23px;font-weight:950;line-height:1.05;min-height:0;font-variant-numeric:tabular-nums}
+.team-points:empty{display:none}
+.score-side .live-points{display:none!important}
+.portrait-stack{position:relative;padding-top:16px}
+.portrait-type-label{position:absolute;top:0;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:9px;font-weight:950;letter-spacing:.3px;text-align:center;text-shadow:0 1px 2px #0007}
+.generic-emblem{display:grid;place-items:center;width:70px;height:70px;border:2px solid currentColor;border-radius:50%;font-size:37px;background:#ffffff26}
+.unknown-name{display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:clamp(14px,4vw,22px);font-weight:950;text-align:center;line-height:1.12;max-width:100%;overflow-wrap:anywhere;letter-spacing:.3px;text-transform:uppercase}.unknown-name span{display:block}
+.missing-face{display:grid!important;place-items:center!important;border-radius:50%;background:#53627a!important;color:#fff!important;font-size:25px!important;line-height:1!important}
+@media(max-width:380px){.match-grid .team .logo{height:88px;max-height:88px}.team-points{font-size:20px}.generic-emblem{width:56px;height:56px;font-size:29px}.portrait-type-label{font-size:8px}}
+/* Single centered emoji placeholder for non-NBA exhibition teams. */
+.portrait-slot.exhibition-portrait{min-height:69px}
+.portrait-stack .exhibition-emoji{display:grid;place-items:center;width:76px;height:69px;font-size:47px;line-height:1;font-family:Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif}
+@media(max-width:380px){.portrait-stack .exhibition-emoji{width:65px;height:59px;font-size:41px}}
+/* Keep empty portrait positions aligned without displaying silhouettes. */
+.portrait-slot{width:100%;min-height:0;display:flex;align-items:center;justify-content:center}
 </style>
 <style>
 .date-dialog{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;padding:16px}.date-dialog.hide{display:none!important}.date-panel{width:min(100%,380px);max-height:90vh;overflow:auto;background:#1c2a40;color:#fff;border:1px solid #59708e;border-radius:18px;padding:16px;box-shadow:0 12px 40px #0008}.date-panel-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:15px}.date-panel-head button,.date-today{background:#2d405c;color:#fff;border:1px solid #60748f;border-radius:9px;padding:8px 12px;font-size:18px}.date-panel-head strong{font-size:17px}.month-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;text-align:center}.month-grid .dow{font-size:12px;color:#b5c7dc;padding:7px 0}.month-grid button{font-size:16px;min-height:40px;color:#fff;border:0;border-radius:9px;background:#293b54}.month-grid button.current{background:#e9f039;color:#101923;font-weight:800}.month-grid button:focus-visible{outline:2px solid #fff}.date-today{margin-top:14px;width:100%;font-size:15px}
@@ -217,6 +239,7 @@
 <div class="toolbar"><button class="tool" id="today">Today</button><button type="button" class="tool" id="chooseDate" aria-haspopup="dialog" aria-controls="dateDialog">📅 Choose date</button><input type="hidden" id="picker"><button class="chip best-upcoming" data-filter="must">Best Upcoming Games</button><span class="count" id="count"></span></div>
 <div class="actions"><button class="tool" id="magicNext">✨ Next Magic game</button><button class="tool" id="spoilers">👁 Show scores</button><button class="refresh" id="refresh" aria-label="Refresh data" title="Refresh">↻</button></div>
 
+ <div class="national-row"><button type="button" class="chip" id="nationalOnly" aria-pressed="false">📺 National TV only</button></div>
  <div class="notice hide" id="notice"></div>
 <button id="featured" class="featured hide" aria-label="Jump to best matchup"><span class="star" aria-hidden="true">★</span><span class="match" id="featuredMatch"></span><span class="best" id="featuredTime"></span><span id="featuredGS" hidden></span></button>
 <section class="games" id="games"><div class="empty">Loading your Google Sheet...</div></section>
@@ -247,6 +270,7 @@ function guideJsonp(success,failure){
 
 'use strict';
 var TEAM_IDS={'Atlanta Hawks':1610612737,'Boston Celtics':1610612738,'Brooklyn Nets':1610612751,'Charlotte Hornets':1610612766,'Chicago Bulls':1610612741,'Cleveland Cavaliers':1610612739,'Dallas Mavericks':1610612742,'Denver Nuggets':1610612743,'Detroit Pistons':1610612765,'Golden State Warriors':1610612744,'Houston Rockets':1610612745,'Indiana Pacers':1610612754,'Los Angeles Clippers':1610612746,'LA Clippers':1610612746,'Los Angeles Lakers':1610612747,'LA Lakers':1610612747,'Memphis Grizzlies':1610612763,'Miami Heat':1610612748,'Milwaukee Bucks':1610612749,'Minnesota Timberwolves':1610612750,'New Orleans Pelicans':1610612740,'New York Knicks':1610612752,'Oklahoma City Thunder':1610612760,'Orlando Magic':1610612753,'Philadelphia 76ers':1610612755,'Phoenix Suns':1610612756,'Portland Trail Blazers':1610612757,'Sacramento Kings':1610612758,'San Antonio Spurs':1610612759,'Toronto Raptors':1610612761,'Utah Jazz':1610612762,'Washington Wizards':1610612764};
+var nationalOnly=false;
 var allGames=[],selected=todayKey(),filter='all',hideScores=true,loaded=false,lastSync=0,lastScoreSync=0;
 var leaders={},scoreCache={},scoreRequests={},scoreErrors={},cards=new Map(),requestToken=0;
 var preview=false,previewScenario='pregame',demoTimer=null,previewDate='2026-10-20';
@@ -266,10 +290,16 @@ function gameId(g){return g.date+'|'+canonical(g.away)+'|'+canonical(g.home)}
 function dayGames(key){if(preview){var matches=allGames.filter(function(g){return g.date===previewDate}).sort(sorted);if(matches.length)return matches.slice(0,5).map(function(g){return Object.assign({},g,{date:key})});return [{date:key,time:'7:00 PM',away:'Boston Celtics',home:'New York Knicks',gs:'9',background:'#fff000'},{date:key,time:'7:30 PM',away:'Atlanta Hawks',home:'Orlando Magic',gs:'8',background:'#f7bf74'}]}return allGames.filter(function(g){return g.date===key}).sort(sorted)}
 function isMagic(g){return g.away==='Orlando Magic'||g.home==='Orlando Magic'}
 function highlighted(g){var bg=String(g.background||'').toLowerCase();return ['#e8eefb','#ffffff','#e6ecfa','#e7ecfa'].indexOf(bg)<0}
-function makeTeam(name){var row=el('div','team'),id=TEAM_IDS[name];row.setAttribute('aria-label',name);if(id){var img=el('img','logo');img.alt=name+' logo';img.loading='lazy';img.src='https://cdn.nba.com/logos/nba/'+id+'/primary/L/logo.svg';img.onerror=function(){img.style.visibility='hidden'};row.appendChild(img)}else row.appendChild(el('span','logo',name));return row}
-function portrait(name){var wrap=el('div','portrait-slot'),p=leaders[name];if(name==='Dallas Mavericks')p={name:'Cooper Flagg',url:'https://cdn.nba.com/headshots/nba/latest/260x190/1642843.png'};if(p&&p.url&&/^https:\/\//.test(p.url)){var img=el('img');img.alt=p.name||name;img.title=p.name||name;img.loading='lazy';img.src=p.url;img.onerror=function(){img.style.visibility='hidden'};wrap.appendChild(img)}else wrap.appendChild(el('div','missing-face'));return wrap}
+function makeTeam(name){
+ var row=el('div','team'),id=TEAM_IDS[name];row.setAttribute('aria-label',name);
+ function showName(){row.classList.add('unknown-team');var label=el('span','unknown-name');var parts=String(name||'Unknown Team').trim().split(/\s+/);if(parts.length>1){var first=parts.shift();label.appendChild(el('span','',first));label.appendChild(el('span','',parts.join(' ')))}else label.textContent=name||'Unknown Team';row.insertBefore(label,row.firstChild)}
+ if(id){var img=el('img','logo');img.alt=name+' logo';img.loading='lazy';img.src='https://cdn.nba.com/logos/nba/'+id+'/primary/L/logo.svg';img.onerror=function(){img.remove();showName()};row.appendChild(img)}else showName();
+ row.appendChild(el('div','team-points'));return row
+}
+function portrait(name){var wrap=el('div','portrait-slot'),p=leaders[name];if(!TEAM_IDS[name]){wrap.classList.add('exhibition-portrait');var avatar=el('span','exhibition-emoji','👤');avatar.setAttribute('role','img');avatar.setAttribute('aria-label','Unknown player');wrap.appendChild(avatar);return wrap;}if(name==='Dallas Mavericks')p={name:'Cooper Flagg',url:'https://cdn.nba.com/headshots/nba/latest/260x190/1642843.png'};if(p&&p.url&&/^https:\/\//.test(p.url)){var img=el('img');img.alt=p.name||name;img.title=p.name||name;img.loading='lazy';img.src=p.url;img.onerror=function(){img.remove()};wrap.appendChild(img)}return wrap}
 function renderWeek(){var root=$('week');root.replaceChildren();var d=new Date(selected+'T12:00:00Z'),monday=shift(selected,-((d.getUTCDay()+6)%7));for(var i=0;i<7;i++){var key=shift(monday,i),dt=new Date(key+'T12:00:00Z'),b=el('button','weekday');b.type='button';if(key===selected)b.classList.add('selected');if(allGames.some(function(g){return g.date===key}))b.classList.add('has-games');b.appendChild(el('span','wd',dt.toLocaleDateString('en-US',{timeZone:'UTC',weekday:'short'}).toUpperCase()));b.appendChild(el('span','num',String(dt.getUTCDate())));b.appendChild(el('span','dot'));b.setAttribute('aria-label',dayText(key));(function(k){b.onclick=function(){setDay(k)}})(key);root.appendChild(b)}}
-function currentGames(){if(filter==='must')return allGames.filter(function(g){return g.date>=todayKey()&&gs(g)>=8}).sort(sorted);return dayGames(selected).filter(function(g){return filter==='all'||(filter==='magic'&&isMagic(g))||(filter==='highlighted'&&highlighted(g))})}
+function isNational(g){return /espn|\babc\b|peacock|\bnbc\b|prime|amazon|nba\s*tv/i.test(String(g.broadcaster||''))}
+function currentGames(){if(filter==='must')return allGames.filter(function(g){return g.date>=todayKey()&&gs(g)>=8&&(!nationalOnly||isNational(g))}).sort(sorted);return dayGames(selected).filter(function(g){return (!nationalOnly||isNational(g))&&(filter==='all'||(filter==='magic'&&isMagic(g))||(filter==='highlighted'&&highlighted(g)))})}
 function scoreFor(g){if(preview)return previewScore(g);var list=scoreCache[g.date]||[];return list.find(function(s){return same(s.away,g.away)&&same(s.home,g.home)})}
 
 function previewScore(g){var defs={pregame:{state:'pre',period:0,detail:'Starts in 45m',awayScore:'',homeScore:''},live:{state:'in',period:2,detail:'Q2 6:12',awayScore:'58',homeScore:'52'},close:{state:'in',period:4,detail:'Q4 1:20',awayScore:'101',homeScore:'99'},blowout:{state:'in',period:3,detail:'Q3 4:03',awayScore:'92',homeScore:'65'},closefinal:{state:'post',period:4,detail:'Final',awayScore:'112',homeScore:'109',completed:true},otfinal:{state:'post',period:5,detail:'Final/OT',awayScore:'128',homeScore:'116',completed:true},final:{state:'post',period:4,detail:'Final',awayScore:'114',homeScore:'101',completed:true}};return Object.assign({away:g.away,home:g.home,broadcasts:[]},defs[previewScenario])}
@@ -303,7 +333,7 @@ function broadcasterLogo(name){
 function networkBadge(name){var types={'ESPN':['espn','ESPN'],'Peacock':['peacock','Peacock'],'Prime Video':['prime','Prime Video']};if(!types[name])return null;var item=types[name],node=el('span','network '+item[0],item[1]);return node}
 function applyScore(card,g){var s=scoreFor(g),info=s?classify(s):null;
  var side=card.querySelector('.score-side'),status=side.querySelector('.mini-status'),points=side.querySelector('.live-points');
- status.textContent='';status.classList.remove('countdown');points.textContent='';var alert=side.querySelector('.game-alert');alert.textContent='';alert.hidden=true;
+ status.textContent='';status.classList.remove('countdown');points.textContent='';card.querySelectorAll('.team-points').forEach(function(x){x.textContent=''});var alert=side.querySelector('.game-alert');alert.textContent='';alert.hidden=true;
  if(info&&info.type!=='pre'){
        // Derive the two independent lines from the game state, never from a combined label.
     // In particular CLOSE FINAL must produce CLOSE + FINAL, not CLOSE + CLOSE + FINAL.
@@ -327,12 +357,9 @@ function applyScore(card,g){var s=scoreFor(g),info=s?classify(s):null;
     if(match){status.appendChild(el('span','status-line',match[1].toUpperCase()));if(match[2])status.appendChild(el('span','status-line',match[2]));}
     else status.textContent=detail;
 if(!hideScores&&info.score){
-   // Keep the two team scores separate; no dash to wrap or consume width.
    var nums=String(info.score).split(/\s*[–—-]\s*/);
-   if(nums.length===2){
-     points.appendChild(el('span','point-line',nums[0].trim()));
-     points.appendChild(el('span','point-line',nums[1].trim()));
-   }else{points.textContent=info.score;}
+   var teamPoints=card.querySelectorAll('.team-points');
+   if(nums.length===2&&teamPoints.length===2){teamPoints[0].textContent=nums[0].trim();teamPoints[1].textContent=nums[1].trim()}
  }
  }else{var count=timeUntil(g);if(count){status.textContent=count;status.classList.add('countdown')}}
  var value=String(g.broadcaster||'').trim();
@@ -340,13 +367,13 @@ if(!hideScores&&info.score){
  var slot=card.querySelector('.service-slot');slot.replaceChildren();slot.appendChild(broadcasterLogo(value||'NBA League Pass'));
 }
 function updateStatuses(){cards.forEach(function(entry){applyScore(entry.card,entry.game)});updateNotice()}
-function updateNotice(){var note=$('notice');var err=scoreErrors[selected];if(!preview&&!hideScores&&err){note.classList.remove('hide');note.textContent='Score feed unavailable: '+err+' · Schedule and GS still work.'}else note.classList.add('hide')}
-function render(){renderWeek();$('day').textContent=filter==='must'?'Upcoming must-watch games':dayText(selected);$('daymeta').textContent=filter==='must'?'BEST UPCOMING':'GAME DAY'+(selected===todayKey()?' · TODAY':'');$('picker').value=selected;var games=preview?dayGames(selected):currentGames();$('count').textContent=games.length+' game'+(games.length===1?'':'s');var root=$('games');root.replaceChildren();cards.clear();var feature=$('featured');feature.classList.add('hide');if(filter!=='must'){var best=dayGames(selected).slice().sort(function(a,b){return gs(b)-gs(a)||minutes(a)-minutes(b)})[0];if(best){feature.classList.remove('hide');var bestBg=isMagic(best)?'#174dca':(best.background||'#e7ecfa');feature.style.background=bestBg;feature.style.color=isMagic(best)?'#ffffff':contrast(bestBg);feature.style.borderColor=isMagic(best)?'#6cafff':'#40536c';feature.classList.toggle('magic-feature',isMagic(best));$('featuredMatch').textContent=best.away+' @ '+best.home;$('featuredTime').textContent=best.time||'';$('featuredGS').textContent='';feature.onclick=function(){var target=document.getElementById('game-'+gameId(best).replace(/[^a-zA-Z0-9]/g,'_'));if(target)target.scrollIntoView({behavior:'smooth',block:'center'});else{setFilter('all');setTimeout(function(){var t=document.getElementById('game-'+gameId(best).replace(/[^a-zA-Z0-9]/g,'_'));if(t)t.scrollIntoView({behavior:'smooth',block:'center'})},50)}}}}
+function updateNotice(){var note=$('notice');var err=scoreErrors[selected];if(!preview&&!hideScores&&selected<todayKey()&&err){note.classList.remove('hide');note.textContent='Score feed unavailable: '+err+' · Schedule and GS still work.'}else note.classList.add('hide')}
+function render(){renderWeek();$('day').textContent=filter==='must'?'Upcoming must-watch games':dayText(selected);$('daymeta').textContent=filter==='must'?'BEST UPCOMING':'GAME DAY'+(selected===todayKey()?' · TODAY':'');$('picker').value=selected;var games=preview?dayGames(selected).filter(function(g){return !nationalOnly||isNational(g)}):currentGames();$('count').textContent=games.length+' game'+(games.length===1?'':'s');var root=$('games');root.replaceChildren();cards.clear();var feature=$('featured');feature.classList.add('hide');if(filter!=='must'){var best=dayGames(selected).filter(function(g){return !nationalOnly||isNational(g)}).slice().sort(function(a,b){return gs(b)-gs(a)||minutes(a)-minutes(b)})[0];if(best){feature.classList.remove('hide');var bestBg=isMagic(best)?'#174dca':(best.background||'#e7ecfa');feature.style.background=bestBg;feature.style.color=isMagic(best)?'#ffffff':contrast(bestBg);feature.style.borderColor=isMagic(best)?'#6cafff':'#40536c';feature.classList.toggle('magic-feature',isMagic(best));$('featuredMatch').textContent=best.away+' @ '+best.home;$('featuredTime').textContent=best.time||'';$('featuredGS').textContent='';feature.onclick=function(){var target=document.getElementById('game-'+gameId(best).replace(/[^a-zA-Z0-9]/g,'_'));if(target)target.scrollIntoView({behavior:'smooth',block:'center'});else{setFilter('all');setTimeout(function(){var t=document.getElementById('game-'+gameId(best).replace(/[^a-zA-Z0-9]/g,'_'));if(t)t.scrollIntoView({behavior:'smooth',block:'center'})},50)}}}}
 if(!games.length){root.appendChild(el('div','empty',loaded?'No matching games. Try another date or filter.':'Loading schedule...'));updateNotice();return}
 games.forEach(function(g){var card=el('article','game'),bg=g.background||'#e7ecfa';if(isMagic(g))card.classList.add('magic-game');card.style.background=isMagic(g)?'#174dca':bg;card.style.color=isMagic(g)?'#ffffff':contrast(bg);card.id='game-'+gameId(g).replace(/[^a-zA-Z0-9]/g,'_');
- var head=el('div','gamehead');head.appendChild(el('span','time',(filter==='must'?dayText(g.date)+' · ':'')+(g.time||'')));var kind=String(g.gameType||g.seasonType||g.type||'').toLowerCase();var label=/pre.?season|exhibition/.test(kind)?'PRE-SEASON':/nba.?cup|in.?season.?tournament/.test(kind)?'NBA CUP':'';head.appendChild(el('span','game-type-label',label));head.appendChild(el('div','service-slot'));card.appendChild(head);
+ var head=el('div','gamehead');head.appendChild(el('span','time',(filter==='must'?dayText(g.date)+' · ':'')+(g.time||'')));var kind=String(g.gameType||g.seasonType||g.type||'').toLowerCase();var label=/pre.?season|exhibition/.test(kind)?'PRE-SEASON':/nba.?cup|in.?season.?tournament/.test(kind)?'NBA CUP':'';head.appendChild(el('div','service-slot'));card.appendChild(head);
  var body=el('div','match-grid');body.appendChild(makeTeam(g.away));
- var faces=el('div','portrait-stack');faces.appendChild(portrait(g.away));faces.appendChild(portrait(g.home));body.appendChild(faces);
+ var faces=el('div','portrait-stack');if(label)faces.appendChild(el('div','portrait-type-label',label));faces.appendChild(portrait(g.away));faces.appendChild(portrait(g.home));body.appendChild(faces);
  body.appendChild(makeTeam(g.home));var side=el('div','score-side');side.appendChild(el('div','mini-status'));side.appendChild(el('div','live-points'));side.appendChild(el('div','game-alert'));body.appendChild(side);card.appendChild(body);
  root.appendChild(card);cards.set(gameId(g),{card:card,game:g});applyScore(card,g)
  });updateNotice()}
@@ -374,6 +401,7 @@ function requestScores(key,force){
   .catch(function(e){scoreErrors[key]=String(e.message||e);delete scoreCache[key];if(key===selected&&token===requestToken)updateStatuses()});
 }
 
+$('nationalOnly').onclick=function(){nationalOnly=!nationalOnly;this.classList.toggle('active',nationalOnly);this.setAttribute('aria-pressed',String(nationalOnly));render();requestScores(selected,false)};
 $('previewToggle').onclick=togglePreview;$('previewScenario').onchange=function(e){setScenario(e.target.value)};$('previewDemo').onclick=toggleDemo;$('previewStep').onclick=function(){if(!preview)togglePreview();nextScenario()};$('prev').onclick=function(){setDay(shift(selected,-7))};$('next').onclick=function(){setDay(shift(selected,7))};$('today').onclick=function(){setFilter('all');setDay(todayKey())};$('picker').onchange=function(e){if(e.target.value){setFilter('all');setDay(e.target.value)}};$('picker').oninput=function(e){if(e.target.value&&e.target.value!==selected){setFilter('all');setDay(e.target.value)}};$('refresh').onclick=function(){load();requestScores(selected,true)};$('magicNext').onclick=function(){var key=todayKey(),next=allGames.filter(function(g){return isMagic(g)&&g.date>=key}).sort(sorted)[0];if(next){setFilter('magic');setDay(next.date)}else alert('No upcoming Magic games in your sheet.')};$('spoilers').onclick=function(){hideScores=!hideScores;$('spoilers').textContent=hideScores?'👁 Show scores':'🙈 Hide scores';updateStatuses();requestScores(selected,false)};document.querySelectorAll('.chip').forEach(function(b){b.onclick=function(){setFilter(b.dataset.filter)}});
 var touchX=null,touchY=null;document.getElementById('calendar').addEventListener('touchstart',function(e){if(e.touches.length!==1)return;touchX=e.touches[0].clientX;touchY=e.touches[0].clientY},{passive:true});document.getElementById('calendar').addEventListener('touchend',function(e){if(touchX===null)return;var dx=e.changedTouches[0].clientX-touchX,dy=e.changedTouches[0].clientY-touchY;touchX=null;touchY=null;if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.4)setDay(shift(selected,dx<0?1:-1))},{passive:true});
 function resume(){if(document.hidden||preview)return;if(Date.now()-lastSync>300000)load();else requestScores(selected,true)}
