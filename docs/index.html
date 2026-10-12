@@ -250,6 +250,8 @@
 /* Keep the game-type label at the card top, horizontally centered over the portraits. */
 .portrait-stack{position:relative!important;overflow:visible!important}
 .portrait-stack .game-type-label{position:absolute!important;top:-26px!important;left:50%!important;transform:translateX(-50%)!important;white-space:nowrap!important;font-size:10px!important;font-weight:900!important;line-height:1!important;z-index:2!important;pointer-events:none!important}
+/* Raise visible team scores slightly without changing logo sizing. */
+.match-grid .team .team-points:not(:empty){transform:translateY(-5px)}
 </style>
 <style>
 .date-dialog{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;padding:16px}.date-dialog.hide{display:none!important}.date-panel{width:min(100%,380px);max-height:90vh;overflow:auto;background:#1c2a40;color:#fff;border:1px solid #59708e;border-radius:18px;padding:16px;box-shadow:0 12px 40px #0008}.date-panel-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:15px}.date-panel-head button,.date-today{background:#2d405c;color:#fff;border:1px solid #60748f;border-radius:9px;padding:8px 12px;font-size:18px}.date-panel-head strong{font-size:17px}.month-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;text-align:center}.month-grid .dow{font-size:12px;color:#b5c7dc;padding:7px 0}.month-grid button{font-size:16px;min-height:40px;color:#fff;border:0;border-radius:9px;background:#293b54}.month-grid button.current{background:#e9f039;color:#101923;font-weight:800}.month-grid button:focus-visible{outline:2px solid #fff}.date-today{margin-top:14px;width:100%;font-size:15px}
