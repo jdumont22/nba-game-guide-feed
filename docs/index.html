@@ -420,7 +420,13 @@ function requestScores(key,force){
   if(preview||!loaded||filter==='must')return;
   if(!force&&scoreCache[key]&&Date.now()-(scoreRequests[key]||0)<15000)return;
   scoreRequests[key]=Date.now();var token=++requestToken;
-  fetch('scores/'+encodeURIComponent(key)+'.json?ts='+Date.now(),{cache:'no-store'})
+  // Set this to your deployed Cloudflare Worker URL after testing it.
+  // Leave empty to continue using the existing GitHub score feed.
+  var LIVE_SCORE_WORKER = 'https://nba-game-guide-scores.jdumont22.workers.dev';
+  var scoreUrl = LIVE_SCORE_WORKER
+    ? LIVE_SCORE_WORKER.replace(/\/$/,'')+'/scores?date='+encodeURIComponent(key)
+    : 'scores/'+encodeURIComponent(key)+'.json?ts='+Date.now();
+  fetch(scoreUrl,{cache:'no-store'})
   .then(function(r){if(!r.ok)throw new Error(r.status===404?'Scores not archived for this date':'HTTP '+r.status);return r.json()})
   .then(function(data){if(!data||!data.available||!Array.isArray(data.games))throw new Error(data&&data.error||'Score data unavailable');
     scoreCache[key]=data.games;delete scoreErrors[key];lastScoreSync=Date.now();
