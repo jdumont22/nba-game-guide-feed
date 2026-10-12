@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-10-11",
-  "updated": "2026-10-12T03:24:01.034402+00:00",
+  "updated": "2026-10-12T03:51:30.898235+00:00",
   "games": [
     {
       "away": "Dallas Mavericks",
@@ -49,13 +49,13 @@
     {
       "away": "Chicago Bulls",
       "home": "Denver Nuggets",
-      "awayScore": "108",
-      "homeScore": "114",
-      "state": "in",
-      "detail": "4th Qtr",
+      "awayScore": "128",
+      "homeScore": "133",
+      "state": "post",
+      "detail": "Final",
       "period": 4,
-      "clock": "Q4 7:04",
-      "completed": false,
+      "clock": "",
+      "completed": true,
       "start": "2026-10-12T01:00:00.000Z",
       "gameId": "21826167",
       "cupStage": null
