@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-10-12",
-  "updated": "2026-10-13T02:40:28.605004+00:00",
+  "updated": "2026-10-13T03:02:53.900171+00:00",
   "games": [
     {
       "away": "Oklahoma City Thunder",
@@ -49,12 +49,12 @@
     {
       "away": "San Antonio Spurs",
       "home": "Utah Jazz",
-      "awayScore": "64",
-      "homeScore": "80",
+      "awayScore": "80",
+      "homeScore": "104",
       "state": "in",
-      "detail": "3rd Qtr",
-      "period": 3,
-      "clock": "Q3 6:34",
+      "detail": "4th Qtr",
+      "period": 4,
+      "clock": "Q4 10:24",
       "completed": false,
       "start": "2026-10-13T01:00:00.000Z",
       "gameId": "21826171",
