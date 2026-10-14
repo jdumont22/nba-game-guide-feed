@@ -1,0 +1,36 @@
+{
+  "available": true,
+  "provider": "BALLDONTLIE via GitHub",
+  "date": "2026-10-15",
+  "updated": "2026-10-14T04:15:30.565388+00:00",
+  "games": [
+    {
+      "away": "Oklahoma City Thunder",
+      "home": "Houston Rockets",
+      "awayScore": "",
+      "homeScore": "",
+      "state": "pre",
+      "detail": "2026-10-16T00:30:00Z",
+      "period": 0,
+      "clock": "",
+      "completed": false,
+      "start": "2026-10-16T00:30:00.000Z",
+      "gameId": "21717913",
+      "cupStage": null
+    },
+    {
+      "away": "Toronto Raptors",
+      "home": "New York Knicks",
+      "awayScore": "",
+      "homeScore": "",
+      "state": "pre",
+      "detail": "2026-10-15T23:30:00Z",
+      "period": 0,
+      "clock": "",
+      "completed": false,
+      "start": "2026-10-15T23:30:00.000Z",
+      "gameId": "21826185",
+      "cupStage": null
+    }
+  ]
+}
