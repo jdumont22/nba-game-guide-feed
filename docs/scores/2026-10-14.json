@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-10-14",
-  "updated": "2026-10-15T04:09:13.066528+00:00",
+  "updated": "2026-10-15T04:42:44.484778+00:00",
   "games": [
     {
       "away": "Brooklyn Nets",
@@ -91,12 +91,12 @@
     {
       "away": "Denver Nuggets",
       "home": "LA Clippers",
-      "awayScore": "67",
-      "homeScore": "75",
+      "awayScore": "92",
+      "homeScore": "104",
       "state": "in",
-      "detail": "3rd Qtr",
-      "period": 3,
-      "clock": "Q3 7:11",
+      "detail": "4th Qtr",
+      "period": 4,
+      "clock": "Q4 7:34",
       "completed": false,
       "start": "2026-10-15T02:30:00.000Z",
       "gameId": "22093897",
