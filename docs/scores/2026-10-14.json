@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-10-14",
-  "updated": "2026-10-15T04:42:44.484778+00:00",
+  "updated": "2026-10-15T05:13:38.174229+00:00",
   "games": [
     {
       "away": "Brooklyn Nets",
@@ -91,13 +91,13 @@
     {
       "away": "Denver Nuggets",
       "home": "LA Clippers",
-      "awayScore": "92",
-      "homeScore": "104",
-      "state": "in",
-      "detail": "4th Qtr",
+      "awayScore": "110",
+      "homeScore": "122",
+      "state": "post",
+      "detail": "Final",
       "period": 4,
-      "clock": "Q4 7:34",
-      "completed": false,
+      "clock": "",
+      "completed": true,
       "start": "2026-10-15T02:30:00.000Z",
       "gameId": "22093897",
       "cupStage": null
