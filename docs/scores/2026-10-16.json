@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-10-16",
-  "updated": "2026-10-17T04:37:05.608640+00:00",
+  "updated": "2026-10-17T05:06:11.645279+00:00",
   "games": [
     {
       "away": "Atlanta Hawks",
@@ -161,13 +161,13 @@
     {
       "away": "Denver Nuggets",
       "home": "Los Angeles Lakers",
-      "awayScore": "90",
-      "homeScore": "86",
-      "state": "in",
-      "detail": "4th Qtr",
+      "awayScore": "121",
+      "homeScore": "106",
+      "state": "post",
+      "detail": "Final",
       "period": 4,
-      "clock": "Q4 11:02",
-      "completed": false,
+      "clock": "",
+      "completed": true,
       "start": "2026-10-17T02:30:00.000Z",
       "gameId": "21826197",
       "cupStage": null
