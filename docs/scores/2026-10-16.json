@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-10-16",
-  "updated": "2026-10-17T13:47:31.729255+00:00",
+  "updated": "2026-10-17T14:09:22.845815+00:00",
   "games": [
     {
       "away": "Atlanta Hawks",
@@ -106,7 +106,7 @@
       "away": "Charlotte Hornets",
       "home": "Memphis Grizzlies",
       "awayScore": "98",
-      "homeScore": "117",
+      "homeScore": "116",
       "state": "post",
       "detail": "Final",
       "period": 4,
