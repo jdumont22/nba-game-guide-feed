@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-10-20",
-  "updated": "2026-10-20T23:38:37.418241+00:00",
+  "updated": "2026-10-21T00:04:38.454583+00:00",
   "games": [
     {
       "away": "Boston Celtics",
@@ -21,12 +21,12 @@
     {
       "away": "Philadelphia 76ers",
       "home": "New York Knicks",
-      "awayScore": "20",
-      "homeScore": "19",
+      "awayScore": "28",
+      "homeScore": "38",
       "state": "in",
-      "detail": "1st Qtr",
-      "period": 1,
-      "clock": "Q1 2:32",
+      "detail": "2nd Qtr",
+      "period": 2,
+      "clock": "Q2 8:09",
       "completed": false,
       "start": "2026-10-20T23:00:00.000Z",
       "gameId": "21717856",
