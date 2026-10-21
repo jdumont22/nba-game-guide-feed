@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-10-20",
-  "updated": "2026-10-21T02:04:25.133227+00:00",
+  "updated": "2026-10-21T02:37:13.556779+00:00",
   "games": [
     {
       "away": "Boston Celtics",
@@ -35,12 +35,12 @@
     {
       "away": "Oklahoma City Thunder",
       "home": "San Antonio Spurs",
-      "awayScore": "11",
-      "homeScore": "11",
+      "awayScore": "46",
+      "homeScore": "30",
       "state": "in",
-      "detail": "1st Qtr",
-      "period": 1,
-      "clock": "Q1 6:42",
+      "detail": "2nd Qtr",
+      "period": 2,
+      "clock": "Q2 7:53",
       "completed": false,
       "start": "2026-10-21T01:30:00.000Z",
       "gameId": "21717857",
