@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-10-21",
-  "updated": "2026-10-22T04:54:31.695428+00:00",
+  "updated": "2026-10-22T05:26:40.001731+00:00",
   "games": [
     {
       "away": "Minnesota Timberwolves",
@@ -147,13 +147,13 @@
     {
       "away": "Sacramento Kings",
       "home": "LA Clippers",
-      "awayScore": "93",
-      "homeScore": "116",
-      "state": "in",
-      "detail": "4th Qtr",
+      "awayScore": "96",
+      "homeScore": "121",
+      "state": "post",
+      "detail": "Final",
       "period": 4,
-      "clock": "Q4 1:58",
-      "completed": false,
+      "clock": "",
+      "completed": true,
       "start": "2026-10-22T02:30:00.000Z",
       "gameId": "21717931",
       "cupStage": null
