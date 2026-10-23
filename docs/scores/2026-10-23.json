@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-10-23",
-  "updated": "2026-10-23T22:10:00.242480+00:00",
+  "updated": "2026-10-23T22:42:43.372183+00:00",
   "games": [
     {
       "away": "New York Knicks",
@@ -105,12 +105,12 @@
     {
       "away": "Chicago Bulls",
       "home": "Milwaukee Bucks",
-      "awayScore": "108",
-      "homeScore": "104",
+      "awayScore": "130",
+      "homeScore": "125",
       "state": "in",
       "detail": "4th Qtr",
       "period": 4,
-      "clock": "Q4 8:44",
+      "clock": "Q4 :04.6",
       "completed": false,
       "start": "2026-10-23T20:00:00.000Z",
       "gameId": "21717941",
