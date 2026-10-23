@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-10-22",
-  "updated": "2026-10-23T04:06:11.181858+00:00",
+  "updated": "2026-10-23T04:37:48.867660+00:00",
   "games": [
     {
       "away": "Cleveland Cavaliers",
@@ -21,13 +21,13 @@
     {
       "away": "Denver Nuggets",
       "home": "Oklahoma City Thunder",
-      "awayScore": "72",
-      "homeScore": "81",
-      "state": "in",
-      "detail": "4th Qtr",
+      "awayScore": "84",
+      "homeScore": "96",
+      "state": "post",
+      "detail": "Final",
       "period": 4,
-      "clock": "Q4 5:18",
-      "completed": false,
+      "clock": "",
+      "completed": true,
       "start": "2026-10-23T01:30:00.000Z",
       "gameId": "21717861",
       "cupStage": null
