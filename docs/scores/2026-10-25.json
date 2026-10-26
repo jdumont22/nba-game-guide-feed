@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-10-25",
-  "updated": "2026-10-26T02:57:03.376280+00:00",
+  "updated": "2026-10-26T03:32:49.830280+00:00",
   "games": [
     {
       "away": "Los Angeles Lakers",
@@ -91,13 +91,13 @@
     {
       "away": "Memphis Grizzlies",
       "home": "Sacramento Kings",
-      "awayScore": "95",
-      "homeScore": "86",
-      "state": "in",
-      "detail": "3rd Qtr",
-      "period": 3,
-      "clock": "Q3 :01.3",
-      "completed": false,
+      "awayScore": "123",
+      "homeScore": "112",
+      "state": "post",
+      "detail": "Final",
+      "period": 4,
+      "clock": "",
+      "completed": true,
       "start": "2026-10-26T01:00:00.000Z",
       "gameId": "21717961",
       "cupStage": null
