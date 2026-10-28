@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-10-27",
-  "updated": "2026-10-28T03:03:14.609475+00:00",
+  "updated": "2026-10-28T03:48:33.880914+00:00",
   "games": [
     {
       "away": "Brooklyn Nets",
@@ -49,12 +49,12 @@
     {
       "away": "Portland Trail Blazers",
       "home": "Los Angeles Lakers",
-      "awayScore": "",
-      "homeScore": "",
-      "state": "pre",
-      "detail": "2026-10-28T03:00:00Z",
-      "period": 0,
-      "clock": "",
+      "awayScore": "32",
+      "homeScore": "38",
+      "state": "in",
+      "detail": "1st Qtr",
+      "period": 1,
+      "clock": "END Q1",
       "completed": false,
       "start": "2026-10-28T03:00:00.000Z",
       "gameId": "21717974",
