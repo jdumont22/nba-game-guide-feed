@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-10-28",
-  "updated": "2026-10-29T04:54:01.254969+00:00",
+  "updated": "2026-10-29T05:38:06.488518+00:00",
   "games": [
     {
       "away": "Miami Heat",
@@ -161,13 +161,13 @@
     {
       "away": "Los Angeles Lakers",
       "home": "LA Clippers",
-      "awayScore": "96",
-      "homeScore": "81",
-      "state": "in",
-      "detail": "4th Qtr",
+      "awayScore": "103",
+      "homeScore": "87",
+      "state": "post",
+      "detail": "Final",
       "period": 4,
-      "clock": "Q4 4:29",
-      "completed": false,
+      "clock": "",
+      "completed": true,
       "start": "2026-10-29T02:30:00.000Z",
       "gameId": "21717986",
       "cupStage": null
