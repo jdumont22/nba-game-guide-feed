@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-10-30",
-  "updated": "2026-10-31T04:48:17.186716+00:00",
+  "updated": "2026-10-31T05:24:53.103270+00:00",
   "games": [
     {
       "away": "Charlotte Hornets",
@@ -119,13 +119,13 @@
     {
       "away": "Los Angeles Lakers",
       "home": "Golden State Warriors",
-      "awayScore": "93",
-      "homeScore": "107",
-      "state": "in",
-      "detail": "4th Qtr",
+      "awayScore": "95",
+      "homeScore": "112",
+      "state": "post",
+      "detail": "Final",
       "period": 4,
-      "clock": "Q4 1:21",
-      "completed": false,
+      "clock": "",
+      "completed": true,
       "start": "2026-10-31T02:00:00.000Z",
       "gameId": "21717999",
       "cupStage": "West Group C"
