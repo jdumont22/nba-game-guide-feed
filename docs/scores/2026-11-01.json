@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-11-01",
-  "updated": "2026-11-01T23:12:22.866905+00:00",
+  "updated": "2026-11-01T23:51:01.686511+00:00",
   "games": [
     {
       "away": "Boston Celtics",
@@ -21,12 +21,12 @@
     {
       "away": "Brooklyn Nets",
       "home": "Indiana Pacers",
-      "awayScore": "37",
-      "homeScore": "32",
+      "awayScore": "63",
+      "homeScore": "56",
       "state": "in",
-      "detail": "2nd Qtr",
-      "period": 2,
-      "clock": "Q2 3:23",
+      "detail": "3rd Qtr",
+      "period": 3,
+      "clock": "Q3 4:39",
       "completed": false,
       "start": "2026-11-01T22:00:00.000Z",
       "gameId": "21718009",
