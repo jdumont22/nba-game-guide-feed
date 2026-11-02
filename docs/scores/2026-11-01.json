@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-11-01",
-  "updated": "2026-11-02T00:47:49.292452+00:00",
+  "updated": "2026-11-02T01:49:13.433890+00:00",
   "games": [
     {
       "away": "Boston Celtics",
@@ -35,12 +35,12 @@
     {
       "away": "LA Clippers",
       "home": "Golden State Warriors",
-      "awayScore": "",
-      "homeScore": "",
-      "state": "pre",
-      "detail": "2026-11-02T01:30:00Z",
-      "period": 0,
-      "clock": "",
+      "awayScore": "14",
+      "homeScore": "9",
+      "state": "in",
+      "detail": "1st Qtr",
+      "period": 1,
+      "clock": "Q1 7:30",
       "completed": false,
       "start": "2026-11-02T01:30:00.000Z",
       "gameId": "21718010",
