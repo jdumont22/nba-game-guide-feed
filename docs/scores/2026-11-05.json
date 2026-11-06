@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-11-05",
-  "updated": "2026-11-06T04:51:14.061149+00:00",
+  "updated": "2026-11-06T05:52:20.311052+00:00",
   "games": [
     {
       "away": "Orlando Magic",
@@ -21,13 +21,13 @@
     {
       "away": "Miami Heat",
       "home": "Golden State Warriors",
-      "awayScore": "65",
-      "homeScore": "78",
-      "state": "in",
-      "detail": "3rd Qtr",
-      "period": 3,
-      "clock": "Q3 3:42",
-      "completed": false,
+      "awayScore": "100",
+      "homeScore": "120",
+      "state": "post",
+      "detail": "Final",
+      "period": 4,
+      "clock": "",
+      "completed": true,
       "start": "2026-11-06T03:00:00.000Z",
       "gameId": "21718042",
       "cupStage": null
