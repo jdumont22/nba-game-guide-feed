@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-11-06",
-  "updated": "2026-11-07T05:22:35.580897+00:00",
+  "updated": "2026-11-07T06:14:42.758996+00:00",
   "games": [
     {
       "away": "Washington Wizards",
@@ -105,13 +105,13 @@
     {
       "away": "Portland Trail Blazers",
       "home": "Los Angeles Lakers",
-      "awayScore": "77",
-      "homeScore": "92",
-      "state": "in",
-      "detail": "4th Qtr",
+      "awayScore": "118",
+      "homeScore": "124",
+      "state": "post",
+      "detail": "Final",
       "period": 4,
-      "clock": "Q4 10:21",
-      "completed": false,
+      "clock": "",
+      "completed": true,
       "start": "2026-11-07T03:00:00.000Z",
       "gameId": "21718050",
       "cupStage": "West Group C"
@@ -119,13 +119,13 @@
     {
       "away": "San Antonio Spurs",
       "home": "Sacramento Kings",
-      "awayScore": "107",
-      "homeScore": "88",
-      "state": "in",
-      "detail": "4th Qtr",
+      "awayScore": "124",
+      "homeScore": "109",
+      "state": "post",
+      "detail": "Final",
       "period": 4,
-      "clock": "Q4 9:08",
-      "completed": false,
+      "clock": "",
+      "completed": true,
       "start": "2026-11-07T03:00:00.000Z",
       "gameId": "21718051",
       "cupStage": "West Group C"
