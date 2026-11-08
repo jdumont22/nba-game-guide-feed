@@ -2,7 +2,7 @@
   "available": true,
   "provider": "BALLDONTLIE via GitHub",
   "date": "2026-11-07",
-  "updated": "2026-11-08T04:31:36.475186+00:00",
+  "updated": "2026-11-08T05:27:55.323950+00:00",
   "games": [
     {
       "away": "Denver Nuggets",
@@ -91,12 +91,12 @@
     {
       "away": "San Antonio Spurs",
       "home": "Portland Trail Blazers",
-      "awayScore": "64",
-      "homeScore": "49",
+      "awayScore": "123",
+      "homeScore": "95",
       "state": "in",
-      "detail": "2nd Qtr",
-      "period": 2,
-      "clock": "Half",
+      "detail": "4th Qtr",
+      "period": 4,
+      "clock": "Q4 2:57",
       "completed": false,
       "start": "2026-11-08T03:00:00.000Z",
       "gameId": "21718058",
