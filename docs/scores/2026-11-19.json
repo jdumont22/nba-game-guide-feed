@@ -1,0 +1,64 @@
+{
+  "available": true,
+  "provider": "BALLDONTLIE via GitHub",
+  "date": "2026-11-19",
+  "updated": "2026-11-18T12:44:52.874583+00:00",
+  "games": [
+    {
+      "away": "Golden State Warriors",
+      "home": "Memphis Grizzlies",
+      "awayScore": "",
+      "homeScore": "",
+      "state": "pre",
+      "detail": "2026-11-20T01:00:00Z",
+      "period": 0,
+      "clock": "",
+      "completed": false,
+      "start": "2026-11-20T01:00:00.000Z",
+      "gameId": "21718143",
+      "cupStage": null
+    },
+    {
+      "away": "Portland Trail Blazers",
+      "home": "Milwaukee Bucks",
+      "awayScore": "",
+      "homeScore": "",
+      "state": "pre",
+      "detail": "2026-11-20T01:00:00Z",
+      "period": 0,
+      "clock": "",
+      "completed": false,
+      "start": "2026-11-20T01:00:00.000Z",
+      "gameId": "21718144",
+      "cupStage": null
+    },
+    {
+      "away": "New York Knicks",
+      "home": "Minnesota Timberwolves",
+      "awayScore": "",
+      "homeScore": "",
+      "state": "pre",
+      "detail": "2026-11-20T01:00:00Z",
+      "period": 0,
+      "clock": "",
+      "completed": false,
+      "start": "2026-11-20T01:00:00.000Z",
+      "gameId": "21718145",
+      "cupStage": null
+    },
+    {
+      "away": "LA Clippers",
+      "home": "San Antonio Spurs",
+      "awayScore": "",
+      "homeScore": "",
+      "state": "pre",
+      "detail": "2026-11-20T01:00:00Z",
+      "period": 0,
+      "clock": "",
+      "completed": false,
+      "start": "2026-11-20T01:00:00.000Z",
+      "gameId": "21718146",
+      "cupStage": null
+    }
+  ]
+}
