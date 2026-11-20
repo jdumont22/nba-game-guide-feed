@@ -1,0 +1,92 @@
+{
+  "available": true,
+  "provider": "BALLDONTLIE via GitHub",
+  "date": "2026-11-21",
+  "updated": "2026-11-20T08:40:20.915107+00:00",
+  "games": [
+    {
+      "away": "Milwaukee Bucks",
+      "home": "Philadelphia 76ers",
+      "awayScore": "",
+      "homeScore": "",
+      "state": "pre",
+      "detail": "2026-11-21T18:00:00Z",
+      "period": 0,
+      "clock": "",
+      "completed": false,
+      "start": "2026-11-21T18:00:00.000Z",
+      "gameId": "21718156",
+      "cupStage": null
+    },
+    {
+      "away": "Portland Trail Blazers",
+      "home": "New York Knicks",
+      "awayScore": "",
+      "homeScore": "",
+      "state": "pre",
+      "detail": "2026-11-22T00:30:00Z",
+      "period": 0,
+      "clock": "",
+      "completed": false,
+      "start": "2026-11-22T00:30:00.000Z",
+      "gameId": "21718157",
+      "cupStage": null
+    },
+    {
+      "away": "LA Clippers",
+      "home": "Dallas Mavericks",
+      "awayScore": "",
+      "homeScore": "",
+      "state": "pre",
+      "detail": "2026-11-22T01:00:00Z",
+      "period": 0,
+      "clock": "",
+      "completed": false,
+      "start": "2026-11-22T01:00:00.000Z",
+      "gameId": "21718158",
+      "cupStage": null
+    },
+    {
+      "away": "Memphis Grizzlies",
+      "home": "Minnesota Timberwolves",
+      "awayScore": "",
+      "homeScore": "",
+      "state": "pre",
+      "detail": "2026-11-22T01:00:00Z",
+      "period": 0,
+      "clock": "",
+      "completed": false,
+      "start": "2026-11-22T01:00:00.000Z",
+      "gameId": "21718159",
+      "cupStage": null
+    },
+    {
+      "away": "New Orleans Pelicans",
+      "home": "San Antonio Spurs",
+      "awayScore": "",
+      "homeScore": "",
+      "state": "pre",
+      "detail": "2026-11-22T01:00:00Z",
+      "period": 0,
+      "clock": "",
+      "completed": false,
+      "start": "2026-11-22T01:00:00.000Z",
+      "gameId": "21718160",
+      "cupStage": null
+    },
+    {
+      "away": "Boston Celtics",
+      "home": "Sacramento Kings",
+      "awayScore": "",
+      "homeScore": "",
+      "state": "pre",
+      "detail": "2026-11-22T03:00:00Z",
+      "period": 0,
+      "clock": "",
+      "completed": false,
+      "start": "2026-11-22T03:00:00.000Z",
+      "gameId": "21718161",
+      "cupStage": null
+    }
+  ]
+}
